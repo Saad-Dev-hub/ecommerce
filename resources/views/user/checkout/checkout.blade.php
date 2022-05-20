@@ -166,43 +166,6 @@
 
                             <div class="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
                                 <div class="header-dropdown-link">
-                                    <div class="dropdown compare-dropdown">
-                                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false" data-display="static"
-                                            title="Compare Products" aria-label="Compare Products">
-                                            <i class="icon-random"></i>
-                                            <span class="compare-txt">Compare</span>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <ul class="compare-products">
-                                                <li class="compare-product">
-                                                    <a href="#" class="btn-remove" title="Remove Product"><i
-                                                            class="icon-close"></i></a>
-                                                    <h4 class="compare-product-title"><a href="product.html">Blue
-                                                            Night Dress</a></h4>
-                                                </li>
-                                                <li class="compare-product">
-                                                    <a href="#" class="btn-remove" title="Remove Product"><i
-                                                            class="icon-close"></i></a>
-                                                    <h4 class="compare-product-title"><a href="product.html">White
-                                                            Long Skirt</a></h4>
-                                                </li>
-                                            </ul>
-
-                                            <div class="compare-actions">
-                                                <a href="#" class="action-link">Clear All</a>
-                                                <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i
-                                                        class="icon-long-arrow-right"></i></a>
-                                            </div>
-                                        </div><!-- End .dropdown-menu -->
-                                    </div><!-- End .compare-dropdown -->
-
-                                    <a href="wishlist.html" class="wishlist-link">
-                                        <i class="icon-heart-o"></i>
-                                        <span class="wishlist-count">3</span>
-                                        <span class="wishlist-txt">Wishlist</span>
-                                    </a>
 
                                     {{-- <div class="dropdown cart-dropdown">
                                         <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
@@ -378,7 +341,7 @@
                                         </div><!-- End .dropdown-menu -->
                                     </div>
                                 </div>
-                            </div><!-- End .col-xxl-5col -->
+                            </div>
                         </div><!-- End .row -->
                     </div><!-- End .col-xl-9 col-xxl-10 -->
                 </div><!-- End .row -->
@@ -387,271 +350,236 @@
 
 
     </header>
-    <main class="main">
-        <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
-            <div class="container">
-                <h1 class="page-title">Shopping Cart<span>Shop</span></h1>
-            </div><!-- End .container -->
-        </div><!-- End .page-header -->
-        <nav aria-label="breadcrumb" class="breadcrumb-nav">
-            <div class="container">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
-                </ol>
-            </div><!-- End .container -->
-        </nav><!-- End .breadcrumb-nav -->
 
-        <div class="page-content">
-            <div class="cart">
+        <main class="main">
+        	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        		<div class="container">
+        			<h1 class="page-title">Checkout<span>Shop</span></h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <table class="table table-cart table-mobile">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    @foreach($cartProductsWithImage as $product)
-                                    <tr>
-                                        <td class="product-col">
-                                            <div class="product">
-                                                <figure class="product-media">
-                                                    <a href="#">
-                                                        <img src="{{ asset($product->image) }}" alt="Product image">
-                                                    </a>
-                                                </figure>
-
-                                                <h3 class="product-title">
-                                                    <a >{{ $product->name }}</a>
-                                                </h3><!-- End .product-title -->
-                                            </div><!-- End .product -->
-                                        </td>
-                                        <td class="price-col">{{ $product->price }}</td>
-                                        <td class="quantity-col">
-                                            <div class="cart-product-quantity">
-                                                {{$product->cart_quantity }}
-                                            </div><!-- End .cart-product-quantity -->
-                                        </td>
-                                        <td class="remove-col">
-                                            <form action="{{ route('user.carts.destroy', $product->id) }}"method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn-remove"
-                                                    title="Remove Product"><i
-                                                        class="icon-close"></i></button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    <tr>
-                                        <th>Total Price</th>
-                                        <th>{{ $totalPrice }}$</th>
-                                    </tr>
-                                    {{-- <tr>
-                                        <td class="product-col">
-                                            <div class="product">
-                                                <figure class="product-media">
-                                                    <a href="#">
-                                                        <img src="assets/images/products/table/product-2.jpg" alt="Product image">
-                                                    </a>
-                                                </figure>
-
-                                                <h3 class="product-title">
-                                                    <a href="#">Blue utility pinafore denim dress</a>
-                                                </h3><!-- End .product-title -->
-                                            </div><!-- End .product -->
-                                        </td>
-                                        <td class="price-col">$76.00</td>
-                                        <td class="quantity-col">
-                                            <div class="cart-product-quantity">
-                                                <input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                            </div><!-- End .cart-product-quantity -->
-                                        </td>
-                                        <td class="total-col">$76.00</td>
-                                        <td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-                                    </tr> --}}
-                                </tbody>
-                            </table><!-- End .table table-wishlist -->
-
-                            <div class="cart-bottom">
-                                <div class="cart-discount">
-                                    <form action="#">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" required placeholder="coupon code">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
-                                            </div><!-- .End .input-group-append -->
-                                        </div><!-- End .input-group -->
-                                    </form>
-                                </div><!-- End .cart-discount -->
-
-                                <a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
-                            </div><!-- End .cart-bottom -->
-                        </div><!-- End .col-lg-9 -->
-                        <aside class="col-lg-3">
-                            <div class="summary summary-cart">
-                                <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
-
-                                <table class="table table-summary">
-                                    <tbody>
-                                        <tr class="summary-subtotal">
-                                            <td>Subtotal:</td>
-                                            <td>${{ $totalPrice }}</td>
-                                        </tr><!-- End .summary-subtotal -->
-                                        <tr class="summary-shipping">
-                                            <td>Shipping:</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-
-                                        <tr class="summary-shipping-row">
-                                            <td>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
-                                                    <label class="custom-control-label" for="free-shipping">Free Shipping</label>
-                                                </div><!-- End .custom-control -->
-                                            </td>
-                                            <td>$0.00</td>
-                                        </tr><!-- End .summary-shipping-row -->
-
-                                        <tr class="summary-shipping-row">
-                                            <td>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="standart-shipping" name="shipping" class="custom-control-input">
-                                                    <label class="custom-control-label" for="standart-shipping">Standart:</label>
-                                                </div><!-- End .custom-control -->
-                                            </td>
-                                            <td>$10.00</td>
-                                        </tr><!-- End .summary-shipping-row -->
-
-                                        <tr class="summary-shipping-row">
-                                            <td>
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="express-shipping" name="shipping" class="custom-control-input">
-                                                    <label class="custom-control-label" for="express-shipping">Express:</label>
-                                                </div><!-- End .custom-control -->
-                                            </td>
-                                            <td>$20.00</td>
-                                        </tr><!-- End .summary-shipping-row -->
-
-                                        <tr class="summary-shipping-estimate">
-                                            <td>Estimate for Your Country<br> <a href="dashboard.html">Change address</a></td>
-                                            <td>&nbsp;</td>
-                                        </tr><!-- End .summary-shipping-estimate -->
-
-                                        <tr class="summary-total">
-                                            <td>Total:</td>
-                                            <td>{{ $totalPrice }}$</td>
-                                        </tr><!-- End .summary-total -->
-                                    </tbody>
-                                </table><!-- End .table table-summary -->
-
-                                <a href="{{ route('user.checkout',Auth::user()->id) }}" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
-                            </div><!-- End .summary -->
-
-                            <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
-                        </aside><!-- End .col-lg-3 -->
-                    </div><!-- End .row -->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol>
                 </div><!-- End .container -->
-            </div><!-- End .cart -->
-        </div><!-- End .page-content -->
-    </main><!-- End .main -->
+            </nav><!-- End .breadcrumb-nav -->
 
-    <footer class="footer">
-        <div class="footer-middle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="widget widget-about">
-                            <img src="{{ asset('assets/images/Capture.PNG') }}" class="footer-logo" alt="Footer Logo" width="105" height="25">
-                            <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+            <div class="page-content">
+            	<div class="checkout">
+	                <div class="container">
+            			<div class="checkout-discount">
+            				<form action="#">
+        						<input type="text" class="form-control" required id="checkout-discount-input">
+            					<label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
+            				</form>
+            			</div><!-- End .checkout-discount -->
+            			<form action="#">
+		                	<div class="row">
+		                		<div class="col-lg-9">
+		                			<h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>First Name *</label>
+		                						<input type="text" class="form-control" required>
+		                					</div><!-- End .col-sm-6 -->
 
-                            <div class="social-icons">
-                                <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
-                                <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-                                <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
-                                <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
-                                <a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
-                            </div><!-- End .soial-icons -->
-                        </div><!-- End .widget about-widget -->
-                    </div><!-- End .col-sm-6 col-lg-3 -->
+		                					<div class="col-sm-6">
+		                						<label>Last Name *</label>
+		                						<input type="text" class="form-control" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="widget">
-                            <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+	            						<label>Company Name (Optional)</label>
+	            						<input type="text" class="form-control">
 
-                            <ul class="widget-list">
-                                <li><a href="about.html">About Go Shop</a></li>
-                                <li><a href="#">How to shop on Go Shop</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                            </ul><!-- End .widget-list -->
-                        </div><!-- End .widget -->
-                    </div><!-- End .col-sm-6 col-lg-3 -->
+	            						<label>Country *</label>
+	            						<input type="text" class="form-control" required>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="widget">
-                            <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+	            						<label>Street address *</label>
+	            						<input type="text" class="form-control" placeholder="House number and Street name" required>
+	            						<input type="text" class="form-control" placeholder="Appartments, suite, unit etc ..." required>
 
-                            <ul class="widget-list">
-                                <li><a href="#">Payment Methods</a></li>
-                                <li><a href="#">Money-back guarantee!</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Terms and conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul><!-- End .widget-list -->
-                        </div><!-- End .widget -->
-                    </div><!-- End .col-sm-6 col-lg-3 -->
+	            						<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Town / City *</label>
+		                						<input type="text" class="form-control" required>
+		                					</div><!-- End .col-sm-6 -->
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="widget">
-                            <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
+		                					<div class="col-sm-6">
+		                						<label>State / County *</label>
+		                						<input type="text" class="form-control" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
 
-                            <ul class="widget-list">
-                                <li><a href="#">Sign In</a></li>
-                                <li><a href="cart.html">View Cart</a></li>
-                                <li><a href="#">Help</a></li>
-                            </ul><!-- End .widget-list -->
-                        </div><!-- End .widget -->
-                    </div><!-- End .col-sm-6 col-lg-3 -->
-                </div><!-- End .row -->
-            </div><!-- End .container -->
-        </div><!-- End .footer-middle -->
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Postcode / ZIP *</label>
+		                						<input type="text" class="form-control" required>
+		                					</div><!-- End .col-sm-6 -->
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
-                <figure class="footer-payments">
-                    <img src="assets/images/payments.png" alt="Payment methods" width="272" height="20">
-                </figure><!-- End .footer-payments -->
-            </div><!-- End .container -->
-        </div><!-- End .footer-bottom -->
-    </footer><!-- End .footer -->
-</div><!-- End .page-wrapper -->
-<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
- <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
- <script src="{{ asset('assets/js/jquery.hoverIntent.min.js') }}"></script>
- <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
- <script src="{{ asset('assets/js/superfish.min.js') }}"></script>
- <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
- <script src="{{ asset('assets/js/bootstrap-input-spinner.js') }}"></script>
- {{-- <script src="assets/js/jquery.magnific-popup.min.js"></script> --}}
- <script src="{{ asset('assets/js/jquery.plugin.min.js') }}"></script>
- <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
- <!-- Main JS File -->
- <script src="{{ asset('assets/js/main.js') }}"></script>
- <script src="{{ asset('assets/js/demos/demo-14.js') }}"></script>
- @toastr_js
- @toastr_render
+		                					<div class="col-sm-6">
+		                						<label>Phone *</label>
+		                						<input type="tel" class="form-control" required>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
 
-</body>
-</html>
+	                					<label>Email address *</label>
+	        							<input type="email" class="form-control" required>
+
+	        							<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="checkout-create-acc">
+											<label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
+										</div><!-- End .custom-checkbox -->
+
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="checkout-diff-address">
+											<label class="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
+										</div><!-- End .custom-checkbox -->
+
+	                					<label>Order notes (optional)</label>
+	        							<textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+		                		</div><!-- End .col-lg-9 -->
+		                		<aside class="col-lg-3">
+		                			<div class="summary">
+		                				<h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
+
+		                				<table class="table table-summary">
+		                					<thead>
+		                						<tr>
+		                							<th>Product</th>
+		                							<th>Total</th>
+		                						</tr>
+		                					</thead>
+
+		                					<tbody>
+		                						<tr>
+                                        @forelse($cartProductsInfo  as $cartProduct)
+                                                    <tr>
+                                                        <td>{{$cartProduct->name}}</td>
+                                                        <td>{{$cartProduct->price}}</td>
+                                                    </tr>
+                                                    @empty
+                                                    <tr>
+                                                        <td colspan="2">No Product</td>
+                                                    </tr>
+                                                    @endforelse
+		                						<tr class="summary-total">
+		                							<td>Total:</td>
+		                							<td>{{ $totalPrice }}$</td>
+		                						</tr><!-- End .summary-total -->
+		                					</tbody>
+		                				</table><!-- End .table table-summary -->
+
+		                				<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+		                					<span class="btn-text">Place Order</span>
+		                					<span class="btn-hover-text">Proceed to Checkout</span>
+		                				</button>
+		                			</div><!-- End .summary -->
+		                		</aside><!-- End .col-lg-3 -->
+		                	</div><!-- End .row -->
+            			</form>
+	                </div><!-- End .container -->
+                </div><!-- End .checkout -->
+            </div><!-- End .page-content -->
+        </main><!-- End .main -->
+
+        <footer class="footer">
+        	<div class="footer-middle">
+	            <div class="container">
+	            	<div class="row">
+	            		<div class="col-sm-6 col-lg-3">
+	            			<div class="widget widget-about">
+	            				<img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+	            				<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+
+	            				<div class="social-icons">
+	            					<a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
+	            					<a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
+	            					<a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+	            					<a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
+	            					<a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
+	            				</div><!-- End .soial-icons -->
+	            			</div><!-- End .widget about-widget -->
+	            		</div><!-- End .col-sm-6 col-lg-3 -->
+
+	            		<div class="col-sm-6 col-lg-3">
+	            			<div class="widget">
+	            				<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+
+	            				<ul class="widget-list">
+	            					<li><a href="about.html">About Molla</a></li>
+	            					<li><a href="#">How to shop on Molla</a></li>
+	            					<li><a href="#">FAQ</a></li>
+	            					<li><a href="contact.html">Contact us</a></li>
+	            					<li><a href="login.html">Log in</a></li>
+	            				</ul><!-- End .widget-list -->
+	            			</div><!-- End .widget -->
+	            		</div><!-- End .col-sm-6 col-lg-3 -->
+
+	            		<div class="col-sm-6 col-lg-3">
+	            			<div class="widget">
+	            				<h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+
+	            				<ul class="widget-list">
+	            					<li><a href="#">Payment Methods</a></li>
+	            					<li><a href="#">Money-back guarantee!</a></li>
+	            					<li><a href="#">Returns</a></li>
+	            					<li><a href="#">Shipping</a></li>
+	            					<li><a href="#">Terms and conditions</a></li>
+	            					<li><a href="#">Privacy Policy</a></li>
+	            				</ul><!-- End .widget-list -->
+	            			</div><!-- End .widget -->
+	            		</div><!-- End .col-sm-6 col-lg-3 -->
+
+	            		<div class="col-sm-6 col-lg-3">
+	            			<div class="widget">
+	            				<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
+
+	            				<ul class="widget-list">
+	            					<li><a href="#">Sign In</a></li>
+	            					<li><a href="cart.html">View Cart</a></li>
+	            					<li><a href="#">My Wishlist</a></li>
+	            					<li><a href="#">Track My Order</a></li>
+	            					<li><a href="#">Help</a></li>
+	            				</ul><!-- End .widget-list -->
+	            			</div><!-- End .widget -->
+	            		</div><!-- End .col-sm-6 col-lg-3 -->
+	            	</div><!-- End .row -->
+	            </div><!-- End .container -->
+	        </div><!-- End .footer-middle -->
+
+	        {{-- <div class="footer-bottom">
+	        	<div class="container">
+	        		<p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+	        		<figure class="footer-payments">
+	        			<img src="assets/images/payments.png" alt="Payment methods" width="272" height="20">
+	        		</figure><!-- End .footer-payments -->
+	        	</div><!-- End .container -->
+	        </div><!-- End .footer-bottom --> --}}
+        </footer><!-- End .footer -->
+    </div><!-- End .page-wrapper -->
+    <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+    <!-- Mobile Menu -->
+    <!-- Plugins JS File -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.hoverIntent.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/superfish.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-input-spinner.js') }}"></script>
+    {{-- <script src="assets/js/jquery.magnific-popup.min.js"></script> --}}
+    <script src="{{ asset('assets/js/jquery.plugin.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
+    <!-- Main JS File -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/demos/demo-14.js') }}"></script>
+    @toastr_js
+    @toastr_render
+
+   </body>
+   </html>

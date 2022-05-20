@@ -28,7 +28,7 @@ class BrandRequest extends FormRequest
             'name' => 'required|max:60|unique:brands,name',
             'description' => 'nullable|string',
             'status' => 'required|in:1,0',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp,gif,svg|max:2048',
         ];
     }
     public function messages()
@@ -42,7 +42,7 @@ class BrandRequest extends FormRequest
             'status.in' => 'The status must be Active or InAcive only !',
             'image.required' => 'The image field is required.',
             'image.image' => 'Wrong image format.',
-            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png,webp, jpg, gif, svg.',
             'image.max' => 'The image may not be greater than 2048 kilobytes.',
         ];
     }

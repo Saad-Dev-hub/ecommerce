@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\SubcategoryController as UserSubCat;
 
 // use App\Http\Controllers\User\SubcategoryController as UserSubcategoryController;
@@ -64,12 +65,6 @@ Route::group([
 });
 
 
-
-
-
-
-
-
 Route::group([
     'prefix' => 'user',
     'as' => 'user.',
@@ -81,6 +76,7 @@ Route::group([
     Route::resource('carts', CartController::class);
     Route::resource('subcategories', UserSubCat::class);
     Route::get('product/view/{id}', [App\Http\Controllers\User\ProductController::class, 'view'])->name('product.view');
+    Route::get('checkout/{id}',[CheckoutController::class,'index'])->name('checkout');
 
 });
 // Route::resource('subcategories', UserSubCat::class);
@@ -95,4 +91,6 @@ Route::group([
 //     Route::resource('subcategories', UserSubCat::class);
 
 // });
+
+
 

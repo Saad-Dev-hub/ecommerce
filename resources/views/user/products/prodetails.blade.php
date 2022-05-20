@@ -321,7 +321,6 @@
                                                 <i class="icon-arrows"></i>
                                             </a>
                                         </figure><!-- End .product-main-image -->
-
                                         <div id="product-zoom-gallery" class="product-image-gallery">
                                             @foreach($productsImages as $image)
                                             @if( $image->primary == 0 && $image->product_id == $products[2]->id)
@@ -334,23 +333,7 @@
                                             </a>
                                             @endif
                                             @endforeach
-
-                                            {{-- <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg">
-                                                <img src="assets/images/products/single/1-small.jpg" alt="product side">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/2.jpg" data-zoom-image="assets/images/products/single/2-big.jpg">
-                                                <img src="assets/images/products/single/2-small.jpg" alt="product cross">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/3.jpg" data-zoom-image="assets/images/products/single/3-big.jpg">
-                                                <img src="assets/images/products/single/3-small.jpg" alt="product with model">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/4.jpg" data-zoom-image="assets/images/products/single/4-big.jpg">
-                                                <img src="assets/images/products/single/4-small.jpg" alt="product back">
-                                            </a> --}}
-                                        </div><!-- End .product-image-gallery -->
+                                        </div>
                                     </div><!-- End .row -->
                                 </div><!-- End .product-gallery -->
                             </div><!-- End .col-md-6 -->

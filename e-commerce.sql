@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3309
--- Generation Time: May 07, 2022 at 03:08 PM
+-- Generation Time: May 20, 2022 at 06:44 PM
 -- Server version: 5.7.36
 -- PHP Version: 8.0.13
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `brands` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `brands`
@@ -53,7 +53,11 @@ INSERT INTO `brands` (`id`, `name`, `description`, `image`, `status`, `created_a
 (7, 'CANON', 'Canon EOS (Electro-Optical System) is an autofocus single-lens reflex camera (SLR) and mirrorless camera series produced by Canon Inc.', 'images/brands/62632cfb3030f-.jpg', 1, '2022-04-22 20:32:27', '2022-04-22 20:32:27'),
 (8, 'LG', 'LG is one of the most known electronic brands worldwide. After having started in South Korea in 1947', 'images/brands/626dcebe4e7621651363518.png', 1, '2022-04-24 18:41:43', '2022-04-30 22:05:18'),
 (9, 'Olympus', 'Break Free with Olympus. Explore small, lightweight, travel-ready camera and lens systems to take your photography to exciting new places.', 'images/brands/6269cb429f3d2-.jpg', 1, '2022-04-27 21:01:22', '2022-04-27 21:01:22'),
-(10, 'Herman Miller', 'Herman Miller is a 100-year-old-plus company that places great importance on design, the environment, community service, and the health and well-being of', 'images/brands/626dcfaf975b31651363759.png', 1, '2022-04-28 20:29:17', '2022-04-30 22:09:19');
+(10, 'Herman Miller', 'Herman Miller is a 100-year-old-plus company that places great importance on design, the environment, community service, and the health and well-being of', 'images/brands/626dcfaf975b31651363759.png', 1, '2022-04-28 20:29:17', '2022-04-30 22:09:19'),
+(11, 'American Eagle', NULL, 'images/brands/6287c832a3a70-.png', 1, '2022-05-20 14:56:18', '2022-05-20 14:56:18'),
+(12, 'Mens Wear', NULL, 'images/brands/6287c8ae427b5-.png', 1, '2022-05-20 14:58:22', '2022-05-20 14:58:22'),
+(13, 'Iconic', NULL, 'images/brands/6287c959eb992-.webp', 1, '2022-05-20 15:01:13', '2022-05-20 15:01:13'),
+(14, 'Zara', NULL, 'images/brands/6287ce50ab525-.png', 1, '2022-05-20 15:22:24', '2022-05-20 15:22:24');
 
 -- --------------------------------------------------------
 
@@ -77,9 +81,9 @@ CREATE TABLE IF NOT EXISTS `carts` (
 --
 
 INSERT INTO `carts` (`user_id`, `product_id`, `quantity`, `created_at`, `updated_at`) VALUES
+(12, 11, 1, '2022-05-07 19:14:27', '2022-05-07 19:14:27'),
 (12, 12, 1, '2022-05-04 01:25:31', '2022-05-04 01:25:31'),
-(12, 14, 1, '2022-05-04 01:25:57', '2022-05-04 01:25:57'),
-(12, 20, 1, '2022-05-04 01:22:43', '2022-05-04 01:22:43');
+(12, 14, 1, '2022-05-04 01:25:57', '2022-05-04 01:25:57');
 
 -- --------------------------------------------------------
 
@@ -146,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_images_product_id_foreign` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `images`
@@ -218,7 +222,18 @@ INSERT INTO `images` (`id`, `image`, `primary`, `product_id`, `created_at`, `upd
 (101, 'images/products/main/626b581b8fccc1651202075.jpg', 1, 25, '2022-04-29 01:14:35', '2022-04-29 01:14:35'),
 (102, 'images/products/secondary/626b581b9ec491651202075.jpg', 0, 25, '2022-04-29 01:14:35', '2022-04-29 01:14:35'),
 (103, 'images/products/secondary/6272ef8db0fda1651699597.jpg', 0, 22, '2022-05-04 19:26:37', '2022-05-04 19:26:37'),
-(104, 'images/products/secondary/6272ef8dc73c81651699597.jpg', 0, 22, '2022-05-04 19:26:37', '2022-05-04 19:26:37');
+(104, 'images/products/secondary/6272ef8dc73c81651699597.jpg', 0, 22, '2022-05-04 19:26:37', '2022-05-04 19:26:37'),
+(105, 'images/products/main/6287cb621ec361653066594.jpg', 1, 26, '2022-05-20 15:09:54', '2022-05-20 15:09:54'),
+(106, 'images/products/main/6287ccf5e86741653066997.jpg', 1, 27, '2022-05-20 15:16:38', '2022-05-20 15:16:38'),
+(107, 'images/products/main/6287cd5ed4db01653067102.jpg', 1, 28, '2022-05-20 15:18:22', '2022-05-20 15:18:22'),
+(108, 'images/products/main/6287cdb8219741653067192.png', 1, 29, '2022-05-20 15:19:52', '2022-05-20 15:19:52'),
+(109, 'images/products/main/6287ce87ed1df1653067399.jpg', 1, 30, '2022-05-20 15:23:19', '2022-05-20 15:23:19'),
+(110, 'images/products/main/6287cfc7c55461653067719.jpg', 1, 31, '2022-05-20 15:28:39', '2022-05-20 15:28:39'),
+(111, 'images/products/main/6287d00da8a7e1653067789.jpg', 1, 32, '2022-05-20 15:29:49', '2022-05-20 15:29:49'),
+(112, 'images/products/main/6287de63539611653071459.jpg', 1, 33, '2022-05-20 16:30:59', '2022-05-20 16:30:59'),
+(113, 'images/products/main/6287dedeba75b1653071582.jpg', 1, 34, '2022-05-20 16:33:02', '2022-05-20 16:33:02'),
+(114, 'images/products/main/6287df4a44c421653071690.jpg', 1, 35, '2022-05-20 16:34:50', '2022-05-20 16:34:50'),
+(115, 'images/products/main/6287dfcc69c0c1653071820.png', 1, 36, '2022-05-20 16:37:00', '2022-05-20 16:37:00');
 
 -- --------------------------------------------------------
 
@@ -340,7 +355,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   UNIQUE KEY `products_code_unique` (`code`),
   KEY `products_brand_id_foreign` (`brand_id`),
   KEY `products_subcategory_id_foreign` (`subcategory_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -349,7 +364,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 INSERT INTO `products` (`id`, `name`, `code`, `price`, `quantity`, `description`, `brand_id`, `subcategory_id`, `offer_id`, `created_at`, `updated_at`) VALUES
 (1, 'LG Television', '55ccc', '10000.00', '17', 'The images used in the product overview below are for representative purposes.\r\nRefer to the image gallery at the top of the page for an accurate representation.', 2, 1, 2, '2022-04-22 20:51:23', '2022-05-07 02:38:58'),
 (2, 'Crystal UHD 4K Smart TV', 'sm334', '9999.00', '5', 'Beautiful picture with curve design\r\nVivid, vivid color expression\r\nhigh image quality', 2, 1, NULL, '2022-04-23 01:30:42', '2022-05-04 01:13:16'),
-(11, 'LG 43 Inch FHD LED TV With Built In HD Receiver - 43Lm5500', 'lg123', '6199.00', '20', 'Full HD screen delivers more accurate images in stunning resolution and vivid color\r\nAdvanced image processor adjusts color for richer, more natural images', 8, 1, NULL, '2022-04-24 21:02:26', '2022-05-04 01:25:44'),
+(11, 'LG 43 Inch FHD LED TV With Built In HD Receiver - 43Lm5500', 'lg123', '6199.00', '19', 'Full HD screen delivers more accurate images in stunning resolution and vivid color\r\nAdvanced image processor adjusts color for richer, more natural images', 8, 1, NULL, '2022-04-24 21:02:26', '2022-05-07 19:14:27'),
 (12, 'LG 50 inches UHD 4K Smart TV, Active HDR, WebOS Operating System SERIES CINEMA SCREEN DESIGN ThinQ AI - 50UP7750PVB', 'lgc2c', '9455.00', '29', 'Features Brand LG Model 50UP7750PVB Type of processor A5 AI Processor 4K Number of sound channels 2 Design Cinema screen Display Nano color Yes Nano accuracy Yes PlatformOperating system webOS Smart TV Number of CPUs Quad Video and picture quality AI upscaling 4K Upscaling Image enhancing Yes AI brightness control Yes Filmmaker mode Yes Dynamic tone mapping HDR dynamic tone mapping HEVC 4K at 60P 10 bit VP9 Video decoder 4K', 8, 1, NULL, '2022-04-27 19:53:18', '2022-05-04 01:25:31'),
 (13, 'LG OLED TV 88 Inch Z1 Series Gallery Design Cinema HDR WebOS Smart ThinQ AI 8K Pixel Dimming', 'lgo33', '20000.00', '3', 'LG OLED TV is a joy to behold. Self-lit pixels allow truly spectacular picture quality and a whole host of design possibilities, while the latest cutting-edge technologies help deliver unprecedented levels of wonder. This is everything you love about TV — elevated in every way.', 8, 1, NULL, '2022-04-27 20:08:14', '2022-04-27 20:08:14'),
 (14, 'LG G2 65 inch evo Gallery Edition', 'lgg65', '11000.00', '6', 'The images used in the product overview below are for representative purposes. Refer to the image gallery at the top of the page for an accurate representation.', 8, 1, NULL, '2022-04-27 20:12:46', '2022-05-04 01:25:58'),
@@ -358,12 +373,23 @@ INSERT INTO `products` (`id`, `name`, `code`, `price`, `quantity`, `description`
 (17, 'Canon EOS R Mirrorless Full Frame Camera w/ RF 24-105mm F4 L IS USM Lens Kit - Vlogging Camera 4K, Content Creator Camera, Wi-Fi, 30.3 MP Full-Frame CMOS Sensor', 'ca000', '2899.00', '23', 'The EOS R combines a redeveloped lens mount and an updated full-frame image sensor for a unique and sophisticated multimedia camera system. Revolving around the new RF lens mount, the EOS R was created to be the means to make the most of a new series of lenses and optical technologies.', 7, 3, NULL, '2022-04-27 21:22:01', '2022-04-27 21:22:01'),
 (18, 'Canon PowerShot SX420 Digital Camera w/ 42x Optical Zoom - Wi-Fi & NFC Enabled', 'ca001', '242.98', '30', 'Smart AUTO is a sophisticated Canon technology that makes getting that great shot as simple as pressing the shutter button. It automatically detects scenes by assessing various factors in both the background and the subject.', 7, 3, NULL, '2022-04-27 21:32:20', '2022-04-27 21:32:20'),
 (19, 'Apple iPhone XR, 128GB, Black', 'ipx12', '359.00', '20', 'With the iPhone XR, you get a roomy 6.1-inch display, fast enough performance from Apple\'s A12 Bionic processor and good camera quality in a colourful design and affordable package. Apple has included the all-new Liquid Retina LCD as the display on the iPhone XR.', 1, 7, NULL, '2022-04-28 19:42:54', '2022-04-28 19:43:24'),
-(20, 'Apple iPhone 12, 64GB, Black', 'ip64B', '599.00', '8', 'Unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc)', 1, 7, NULL, '2022-04-28 19:46:28', '2022-05-04 01:22:43'),
+(20, 'Apple iPhone 12, 64GB, Black', 'ip64B', '599.00', '9', 'Unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc)', 1, 7, NULL, '2022-04-28 19:46:28', '2022-05-07 19:15:40'),
 (21, 'SAMSUNG Galaxy S22 Ultra Smartphone, Factory Unlocked Android Cell Phone, 128GB, 8K Camera & Video, Brightest Display, S Pen, Long Battery Life, Fast 4nm Processor, US Version, Phantom White', 'sms22', '999.00', '10', '8K SUPER STEADY VIDEO: Shoot videos that rival how epic your life is with stunning 8K recording, the highest recording resolution available on a smartphone; Video captured is effortlessly smooth, thanks to Auto Focus Video Stabilization on Galaxy S22 Ultra', 2, 7, NULL, '2022-04-28 20:14:35', '2022-05-04 01:24:14'),
 (22, 'SAMSUNG Galaxy A13 5G Cell Phone, Factory Unlocked Android Smartphone, 64GB, Long Lasting Battery, Expandable Storage, Triple Lens Camera, Infinite Display, US Version, Black', 'sma13', '249.99', '44', 'LONG-LASTING BATTERY: Whatever your day has in store, this mobile phone’s 15W Fast Charging battery makes sure you’re ready for it and gives your charger a break', 2, 7, NULL, '2022-04-28 20:21:15', '2022-04-28 20:21:15'),
 (23, 'Flash Furniture Mid-Back Black Mesh Swivel Ergonomic Task Office Chair with Flip-Up Arms', 'fur55', '66.99', '50', 'Herman Miller is a 100-year-old-plus company that places great importance on design, the environment, community service, and the health and well-being', 10, 9, NULL, '2022-04-28 20:31:56', '2022-04-29 00:43:25'),
 (24, 'YITAHOME Patio Furniture Set,7-Piece All-Weather Rattan Patio Conversation', 'hm7se', '723.99', '60', 'ALL-WEATHER STURDY CONSTRUCTION-Engineered with high strength checkered PE rattan woven on a rigid coated steel frame to resist all weather conditions and provide a steady & comfortable sitting experience of outdoor life.', 10, 9, NULL, '2022-04-29 00:49:20', '2022-04-29 00:49:20'),
-(25, 'Home Future 2 Seat Sofa - Beige', 'fr2sf', '3284.00', '100', 'Home Future Beige 2-Seat Sofa\r\nWidth: 80cm Depth: 80cm Height: 200cm\r\nMaterial: Bean Wasfeng-Fabric: Plush and Linen\r\nSponge Density: 30', 10, 10, NULL, '2022-04-29 01:14:35', '2022-05-07 02:24:00');
+(25, 'Home Future 2 Seat Sofa - Beige', 'fr2sf', '3284.00', '100', 'Home Future Beige 2-Seat Sofa\r\nWidth: 80cm Depth: 80cm Height: 200cm\r\nMaterial: Bean Wasfeng-Fabric: Plush and Linen\r\nSponge Density: 30', 10, 10, NULL, '2022-04-29 01:14:35', '2022-05-07 02:24:00'),
+(26, 'OVERSIZE HEAVY WEIGHT Jacket', '75jjj', '120.00', '50', 'Oversize T-shirt made of compact cotton. Round neckline and sleeves falling below the elbow.', 12, 15, NULL, '2022-05-20 15:09:54', '2022-05-20 15:09:54'),
+(27, 'BASIC SLIM FIT Jacker', '75jj6', '150.00', '23', NULL, 13, 15, NULL, '2022-05-20 15:16:37', '2022-05-20 15:16:37'),
+(28, 'TEXTURED T-SHIRT', '34rst', '330.00', '50', 'The training top is made of technical fabric with a highly elastic texture.\r\n- Round neck and long raglan sleeves.\r\n- Flat seams, more resistant and ideal for movement.\r\n- Asymmetric hem, with extra length at the back.\r\n- Logo detail with reflective effect.', 12, 15, NULL, '2022-05-20 15:18:22', '2022-05-20 15:18:22'),
+(29, 'T-SHIRT WITH COMBINED POCKET', '34ssd', '250.00', '30', 'T-shirt made of a cotton blend. Designed to practice any sport.\r\n- Round neck and short raglan sleeves.\r\n- Ergonomic design that adapts to movement.\r\n- Contrast front pocket with invisible zip fastening.\r\n- Stretch fabric in every direction.', 12, 15, NULL, '2022-05-20 15:19:52', '2022-05-20 15:19:52'),
+(30, 'KNIT T-SHIRT WITH CONTRAST PRINT', 'kb334', '620.00', '80', NULL, 14, 15, NULL, '2022-05-20 15:23:19', '2022-05-20 15:23:19'),
+(31, 'marine heart longline t-shirt', 'nn999', '600.00', '30', 'short-sleeved top cotton jersey for comfort longer length with side splits tape covered neck seam for comfort marine print with sequins all embroideries are fabric-backed to prevent irritation', 12, 15, NULL, '2022-05-20 15:28:39', '2022-05-20 15:28:39'),
+(32, 'AE NE(X)T LEVEL KHAKI JOGGER', 'ae233', '660.00', '20', NULL, 14, 15, NULL, '2022-05-20 15:29:49', '2022-05-20 16:23:15'),
+(33, 'AE STRETCH MOM JEAN', 'ww334', '660.00', '55', 'These shorts are Real Good: made in a factory that meets our standards for water recycling and reduction.\r\nStretch', 13, 14, NULL, '2022-05-20 16:30:59', '2022-05-20 16:30:59'),
+(34, 'Casual Outfits', 'co234', '1200.00', '80', 'Incorporating the suit into the dress, showing the feminine charm. The cutting is neat and concise, and combined with pleated skirt. With a belt to outline the body figure and waistline. It presents the urban modern look.', 13, 14, NULL, '2022-05-20 16:33:02', '2022-05-20 16:33:02'),
+(35, 'HIGH-WAIST WIDE-LEG JEANS', 'hh880', '256.00', '50', 'High-waist wide-leg jeans with a five-pocket design, belt loops, and zip fly and top button fastening. Inseam length: 84.5 cm.', 14, 14, NULL, '2022-05-20 16:34:50', '2022-05-20 16:34:50'),
+(36, 'Embroidered Round Neck Dress', '666vv', '5200.00', '10', 'Enchanted by the placement embroidery, this dress is apt for your young girl to flaunt at a special event. Dark in colour, this piece with sheer layering features a round neck, short sleeves, cinched waist and concealed zip closure at the back. It is tailor-made from quality fabric and delivers lasting comfort for her. Furthermore, she can coordinate a pair of ballerina shoes with this dress.', 14, 14, NULL, '2022-05-20 16:37:00', '2022-05-20 16:37:00');
 
 -- --------------------------------------------------------
 
@@ -465,7 +491,7 @@ INSERT INTO `users` (`id`, `name`, `role`, `email`, `email_verified_at`, `passwo
 (8, 'Ms. Felicia Wyman Sr.', 'admin', 'tamia.johnston@example.com', '2022-04-22 19:41:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '402.296.1548', 'Jazmin Pines', 'West Ayla', 'Suriname', 'images/users/default-user.png', '8U9dVJvlRM', '2022-04-22 19:41:55', '2022-04-22 19:41:55'),
 (9, 'Madge Beatty', 'admin', 'mohr.ryder@example.org', '2022-04-22 19:41:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '1-458-778-8834', 'Lolita Flat', 'Port Vitachester', 'Benin', 'images/users/default-user.png', 'jdo7UL5QUF', '2022-04-22 19:41:55', '2022-04-22 19:41:55'),
 (10, 'Prof. Donavon Ruecker Sr.', 'user', 'ulices.connelly@example.com', '2022-04-22 19:41:54', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '(931) 516-3906', 'Rosetta Groves', 'Kirlinborough', 'Panama', 'images/users/default-user.png', 'wuouIGJTy0', '2022-04-22 19:41:55', '2022-04-22 19:41:55'),
-(11, 'Saad ELkammah', 'admin', 'saad1998elkammah@gmail.com', NULL, '$2y$10$mGnF3xSo1Q.tDIWEsJEYi.3X04SrmDZtNEnkPNeRXvjBsBilhxq0S', '01025608740', NULL, NULL, NULL, 'images/users/default-user.png', 'MJuybqobLsLKa70ALuk0T9hxSbycAFFKZsbZzzSWrs3UEfEPcL7NfKYXKmut', '2022-04-22 19:44:53', '2022-04-26 18:17:51'),
+(11, 'Saad ELkammah', 'admin', 'saad1998elkammah@gmail.com', NULL, '$2y$10$mGnF3xSo1Q.tDIWEsJEYi.3X04SrmDZtNEnkPNeRXvjBsBilhxq0S', '01025608740', NULL, NULL, NULL, 'images/users/default-user.png', 'gKkE5C09izvZ3sfp1E6eFHDlitSdnBzgCLSErT5YBBDU0IRGacKBzDu0B5Mw', '2022-04-22 19:44:53', '2022-04-26 18:17:51'),
 (12, 'Ahmed', 'user', 'ahmed@yahoo.com', NULL, '$2y$10$u2RRELyFCK9A66QLio42m.QWjcea0ckFo57Uf8AwVwvTkXpVXrZbW', '01025458780', NULL, NULL, NULL, 'default-user.png', NULL, '2022-04-29 18:39:47', '2022-04-29 18:39:47');
 
 --

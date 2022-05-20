@@ -172,44 +172,6 @@
 
                             <div class="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
                                 <div class="header-dropdown-link">
-                                    <div class="dropdown compare-dropdown">
-                                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false" data-display="static"
-                                            title="Compare Products" aria-label="Compare Products">
-                                            <i class="icon-random"></i>
-                                            <span class="compare-txt">Compare</span>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <ul class="compare-products">
-                                                <li class="compare-product">
-                                                    <a href="#" class="btn-remove" title="Remove Product"><i
-                                                            class="icon-close"></i></a>
-                                                    <h4 class="compare-product-title"><a href="product.html">Blue
-                                                            Night Dress</a></h4>
-                                                </li>
-                                                <li class="compare-product">
-                                                    <a href="#" class="btn-remove" title="Remove Product"><i
-                                                            class="icon-close"></i></a>
-                                                    <h4 class="compare-product-title"><a href="product.html">White
-                                                            Long Skirt</a></h4>
-                                                </li>
-                                            </ul>
-
-                                            <div class="compare-actions">
-                                                <a href="#" class="action-link">Clear All</a>
-                                                <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i
-                                                        class="icon-long-arrow-right"></i></a>
-                                            </div>
-                                        </div><!-- End .dropdown-menu -->
-                                    </div><!-- End .compare-dropdown -->
-
-                                    <a href="wishlist.html" class="wishlist-link">
-                                        <i class="icon-heart-o"></i>
-                                        <span class="wishlist-count">3</span>
-                                        <span class="wishlist-txt">Wishlist</span>
-                                    </a>
-
                                     <div class="dropdown cart-dropdown">
                                         <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false" data-display="static">
@@ -219,12 +181,9 @@
                                             @endguest
                                             @auth
                                                 <span class="cart-count">
-
-                                                    {{ $totalQuantity}}
-
+                                                    {{ $totalQuantity }}
                                                 </span>
                                             @endauth
-
                                             <span class="cart-txt">Cart</span>
                                         </a>
 
@@ -232,40 +191,43 @@
                                             <div class="dropdown-cart-products">
                                                 @auth
 
-                                                @forelse( $cartProductsWithImage as $product)
-                                                    <div class="product">
-                                                        <div class="product-cart-details">
-                                                            <h4 class="product-title">
-                                                                <a href="product.html">{{ $product->name }}</a>
-                                                            </h4>
+                                                    @forelse($cartProductsWithImage as $product)
+                                                        <div class="product">
+                                                            <div class="product-cart-details">
+                                                                <h4 class="product-title">
+                                                                    <a href="product.html">{{ $product->name }}</a>
+                                                                </h4>
 
-                                                            <span class="cart-product-info">
-                                                                <span
-                                                                    class="cart-product-qty">{{ $product->cart_quantity }}x </span>
-                                                                {{ $product->price }}
-                                                            </span>
-                                                        </div><!-- End .product-cart-details -->
+                                                                <span class="cart-product-info">
+                                                                    <span
+                                                                        class="cart-product-qty">{{ $product->cart_quantity }}x
+                                                                    </span>
+                                                                    {{ $product->price }}
+                                                                </span>
+                                                            </div><!-- End .product-cart-details -->
                                                             <figure class="product-image-container">
                                                                 <a href="" class="product-image">
-                                                                        <img src="{{ asset($product->image) }}" alt="product">
+                                                                    <img src="{{ asset($product->image) }}"
+                                                                        alt="product">
                                                                 </a>
                                                             </figure>
 
-                                                        {{-- <a href="#" class="btn-remove" title="Remove Product"><i
+                                                            {{-- <a href="#" class="btn-remove" title="Remove Product"><i
                                                         class="icon-close"></i></a> --}}
-                                                        <form action="{{ route('user.carts.destroy', $product->id) }}"method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn-remove"
-                                                                title="Remove Product"><i
-                                                                    class="icon-close"></i></button>
-                                                        </form>
-                                                    </div><!-- End .product -->
-                                                @empty
-                                                    No products in cart
-
-                                                @endforelse
-                                                {{-- <div class="product">
+                                                            <form
+                                                                action="{{ route('user.carts.destroy', $product->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn-remove"
+                                                                    title="Remove Product"><i
+                                                                        class="icon-close"></i></button>
+                                                            </form>
+                                                        </div><!-- End .product -->
+                                                    @empty
+                                                        No products in cart
+                                                    @endforelse
+                                                    {{-- <div class="product">
                                                 <div class="product-cart-details">
                                                     <h4 class="product-title">
                                                         <a href="product.html">Blue utility pinafore denim
@@ -287,20 +249,21 @@
                                                 <a href="#" class="btn-remove" title="Remove Product"><i
                                                         class="icon-close"></i></a>
                                             </div><!-- End .product --> --}}
-                                            </div><!-- End .cart-product -->
+                                                </div><!-- End .cart-product -->
 
-                                            <div class="dropdown-cart-total">
-                                                <span>Total</span>
+                                                <div class="dropdown-cart-total">
+                                                    <span>Total</span>
 
-                                                <span class="cart-total-price">{{ $totalPrice }}$</span>
-                                            </div><!-- End .dropdown-cart-total -->
+                                                    <span class="cart-total-price">{{ $totalPrice }}$</span>
+                                                </div><!-- End .dropdown-cart-total -->
 
-                                            <div class="dropdown-cart-action">
-                                                <a href="{{ route('user.carts.index') }}" class="btn btn-primary">View Cart</a>
-                                                <a href="checkout.html"
-                                                    class="btn btn-outline-primary-2"><span>Checkout</span><i
-                                                        class="icon-long-arrow-right"></i></a>
-                                            </div><!-- End .dropdown-cart-total -->
+                                                <div class="dropdown-cart-action">
+                                                    <a href="{{ route('user.carts.index') }}"
+                                                        class="btn btn-primary">View Cart</a>
+                                                    <a href="checkout.html"
+                                                        class="btn btn-outline-primary-2"><span>Checkout</span><i
+                                                            class="icon-long-arrow-right"></i></a>
+                                                </div><!-- End .dropdown-cart-total -->
                                             @endauth
                                         </div><!-- End .dropdown-menu -->
                                     </div><!-- End .cart-dropdown -->
@@ -593,40 +556,46 @@
                                                         <div class="menu-col">
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <div class="menu-title">Women</div>
+                                                                    <div class="menu-title"></div>
                                                                     <!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#"><strong>New
-                                                                                    Arrivals</strong></a></li>
-                                                                        <li><a href="#"><strong>Best
-                                                                                    Sellers</strong></a></li>
-                                                                        <li><a href="#"><strong>Trending</strong></a>
-                                                                        </li>
-                                                                        <li><a href="#">Clothing</a></li>
-                                                                        <li><a href="#">Shoes</a></li>
-                                                                        <li><a href="#">Bags</a></li>
-                                                                        <li><a href="#">Accessories</a></li>
-                                                                        <li><a href="#">Jewlery & Watches</a></li>
-                                                                        <li><a href="#"><strong>Sale</strong></a>
-                                                                        </li>
+                                                                        @forelse ($categories as $category)
+                                                                            @if ($category->name == 'Clothing')
+                                                                                @foreach ($category->subcategories as $subcategory)
+                                                                                    @if($subcategory->name=='Women')
+                                                                                    <li><a href="{{ route('user.subcategories.show', $subcategory->id) }}">
+                                                                                        <strong class="menu-title">{{ $subcategory->name }}</strong></a>
+                                                                                    </li>
+                                                                                    @endif
+                                                                                @endforeach
+                                                                            @endif
+                                                                        @empty
+                                                                            <li><a href="#">No Categories</a></li>
+                                                                        @endforelse
+
+
+
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
 
                                                                 <div class="col-md-6">
-                                                                    <div class="menu-title">Men</div>
+                                                                    <div class="menu-title"></div>
                                                                     <!-- End .menu-title -->
                                                                     <ul>
-                                                                        <li><a href="#"><strong>New
-                                                                                    Arrivals</strong></a></li>
-                                                                        <li><a href="#"><strong>Best
-                                                                                    Sellers</strong></a></li>
-                                                                        <li><a href="#"><strong>Trending</strong></a>
-                                                                        </li>
-                                                                        <li><a href="#">Clothing</a></li>
-                                                                        <li><a href="#">Shoes</a></li>
-                                                                        <li><a href="#">Bags</a></li>
-                                                                        <li><a href="#">Accessories</a></li>
-                                                                        <li><a href="#">Jewlery & Watches</a></li>
+                                                                        @forelse ($categories as $category)
+                                                                        @if ($category->name == 'Clothing')
+                                                                            @foreach ($category->subcategories as $subcategory)
+                                                                                @if($subcategory->name=='Men')
+                                                                                <li><a href="{{ route('user.subcategories.show', $subcategory->id) }}">
+                                                                                    <strong class="menu-title">{{ $subcategory->name }}</strong></a>
+                                                                                </li>
+                                                                                @endif
+                                                                            @endforeach
+                                                                        @endif
+                                                                    @empty
+                                                                        <li><a href="#">No Categories</a></li>
+                                                                    @endforelse
+
                                                                     </ul>
                                                                 </div><!-- End .col-md-6 -->
                                                             </div><!-- End .row -->
@@ -1171,7 +1140,7 @@
                                         Spring Collections 2022
                                     </div><!-- End .intro-text -->
 
-                                    <a href="{{route('user.subcategories.show',9)}}" class="btn btn-primary">
+                                    <a href="{{ route('user.subcategories.show', 9) }}" class="btn btn-primary">
                                         <span>Discover Now</span>
                                         <i class="icon-long-arrow-right"></i>
                                     </a>

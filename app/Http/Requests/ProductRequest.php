@@ -33,7 +33,6 @@ class ProductRequest extends FormRequest
             'subcategory_id' => 'required|exists:subcategories,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'size' => 'nullable|string|in:S,M,L,XL',
-            'secondary_images'=>'required|array|min:1|max:5',
             'secondary_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ];
 
