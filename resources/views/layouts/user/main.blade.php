@@ -1536,6 +1536,7 @@
                                                             }
                                                         }
                                                     }'>
+                                                    @auth
                                                     @foreach($allProductsWithImages as $product1)
                                                         <div class="product text-center">
                                                             <figure class="product-media">
@@ -1581,7 +1582,8 @@
                                                                 </div><!-- End .rating-container -->
                                                             </div><!-- End .product-body -->
                                                         </div>
-                                                    @endforeach    
+                                                    @endforeach  
+                                                    @endauth
                                                     </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
                                                 <div class="tab-pane p-0 fade" id="trending-women-tab" role="tabpanel"
@@ -1615,6 +1617,7 @@
                                                             }
                                                         }
                                                     }'>
+                                                    @auth
                                                     @foreach ($womenProducts as $women )
                                                     <div class="product text-center">
                                                         <figure class="product-media">
@@ -1663,9 +1666,9 @@
                                                                         class="sr-only">Color name</span></a>
                                                             </div><!-- End .product-nav -->
                                                         </div><!-- End .product-body -->
-                                                    </div>
-                  
+                                                    </div>                  
                                                     @endforeach
+                                                    @endauth
                                                        </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
                                                 <div class="tab-pane p-0 fade" id="trending-men-tab" role="tabpanel"
@@ -1699,6 +1702,7 @@
                                                             }
                                                         }
                                                     }'>
+                                                    @auth
                                                     @foreach ($menProducts as  $men)
                                                     <div class="product text-center">
                                                         <figure class="product-media">
@@ -1743,6 +1747,7 @@
                                                     </div><!-- End .product -->
        
                                                     @endforeach
+                                                    @endauth
                                                        </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
                                                 <div class="tab-pane p-0 fade" id="trending-glass-tab" role="tabpanel"
@@ -1776,6 +1781,7 @@
                                                             }
                                                         }
                                                     }'>
+                                                    @auth
                                                     @foreach ($sunglassesProducts as $sunglass )
                                                     <div class="product text-center">
                                                         <figure class="product-media">
@@ -1820,6 +1826,7 @@
                                                     </div><!-- End .product -->
              
                                                     @endforeach
+                                                    @endauth
                                                     </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
                                                 <div class="tab-pane p-0 fade" id="trending-child-tab" role="tabpanel"
@@ -1853,6 +1860,7 @@
                                                             }
                                                         }
                                                     }'>
+                                                    @auth
                                                     @foreach ($childernProducts as $child)
                                                     <div class="product text-center">
                                                         <figure class="product-media">
@@ -1899,236 +1907,8 @@
                                                     </div><!-- End .product -->
        
                                                     @endforeach
-                                                        <div class="product text-center">
-                                                            <figure class="product-media">
-                                                                <a href="product.html">
-                                                                    <img src="assets/images/demos/demo-14/products/product-4.jpg"
-                                                                        alt="Product image" class="product-image">
-                                                                </a>
-
-                                                                <div class="product-action-vertical">
-                                                                    <a href="#" class="btn-product-icon btn-wishlist"
-                                                                        title="Add to wishlist"><span>add to wishlist</span></a>
-                                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                                                        title="Quick view"><span>Quick view</span></a>
-                                                                    <a href="#" class="btn-product-icon btn-compare"
-                                                                        title="Compare"><span>Compare</span></a>
-                                                                </div><!-- End .product-action-vertical -->
-
-                                                                <div class="product-action">
-                                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add
-                                                                            to cart</span></a>
-                                                                </div><!-- End .product-action -->
-                                                            </figure><!-- End .product-media -->
-
-                                                            <div class="product-body">
-                                                                <div class="product-cat">
-                                                                    <a href="#">Clothes</a>
-                                                                </div><!-- End .product-cat -->
-                                                                <h3 class="product-title"><a href="product.html">Tan suede biker
-                                                                        jacket</a></h3><!-- End .product-title -->
-                                                                <div class="product-price">
-                                                                    $240.00
-                                                                </div><!-- End .product-price -->
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 80%;"></div>
-                                                                        <!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                                </div><!-- End .rating-container -->
-                                                            </div><!-- End .product-body -->
-                                                        </div><!-- End .product -->
-
-                                                        <div class="product text-center">
-                                                            <figure class="product-media">
-                                                                <a href="product.html">
-                                                                    <img src="assets/images/demos/demo-14/products/product-3.jpg"
-                                                                        alt="Product image" class="product-image">
-                                                                </a>
-
-                                                                <div class="product-action-vertical">
-                                                                    <a href="#" class="btn-product-icon btn-wishlist"
-                                                                        title="Add to wishlist"><span>add to wishlist</span></a>
-                                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                                                        title="Quick view"><span>Quick view</span></a>
-                                                                    <a href="#" class="btn-product-icon btn-compare"
-                                                                        title="Compare"><span>Compare</span></a>
-                                                                </div><!-- End .product-action-vertical -->
-
-                                                                <div class="product-action">
-                                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add
-                                                                            to cart</span></a>
-                                                                </div><!-- End .product-action -->
-                                                            </figure><!-- End .product-media -->
-
-                                                            <div class="product-body">
-                                                                <div class="product-cat">
-                                                                    <a href="#">Furniture</a>
-                                                                </div><!-- End .product-cat -->
-                                                                <h3 class="product-title"><a href="product.html">Can 2-Seater Sofa
-                                                                        frame charcoal</a></h3><!-- End .product-title -->
-                                                                <div class="product-price">
-                                                                    $3,050.00
-                                                                </div><!-- End .product-price -->
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 60%;"></div>
-                                                                        <!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                    <span class="ratings-text">( 8 Reviews )</span>
-                                                                </div><!-- End .rating-container -->
-
-                                                                <div class="product-nav product-nav-dots">
-                                                                    <a href="#" class="active" style="background: #b58555;"><span
-                                                                            class="sr-only">Color
-                                                                            name</span></a>
-                                                                    <a href="#" style="background: #93a6b0;"><span
-                                                                            class="sr-only">Color name</span></a>
-                                                                </div><!-- End .product-nav -->
-                                                            </div><!-- End .product-body -->
-                                                        </div><!-- End .product -->
-
-                                                        <div class="product text-center">
-                                                            <figure class="product-media">
-                                                                <span class="product-label label-sale">Sale</span>
-                                                                <a href="product.html">
-                                                                    <img src="assets/images/demos/demo-14/products/product-2.jpg"
-                                                                        alt="Product image" class="product-image">
-                                                                </a>
-
-                                                                <div class="product-countdown" data-until="+55h" data-relative="true"
-                                                                    data-labels-short="true"></div><!-- End .product-countdown -->
-
-                                                                <div class="product-action-vertical">
-                                                                    <a href="#" class="btn-product-icon btn-wishlist"
-                                                                        title="Add to wishlist"><span>add to wishlist</span></a>
-                                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                                                        title="Quick view"><span>Quick view</span></a>
-                                                                    <a href="#" class="btn-product-icon btn-compare"
-                                                                        title="Compare"><span>Compare</span></a>
-                                                                </div><!-- End .product-action-vertical -->
-
-                                                                <div class="product-action">
-                                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add
-                                                                            to cart</span></a>
-                                                                </div><!-- End .product-action -->
-                                                            </figure><!-- End .product-media -->
-
-                                                            <div class="product-body">
-                                                                <div class="product-cat">
-                                                                    <a href="#">Electronics</a>
-                                                                </div><!-- End .product-cat -->
-                                                                <h3 class="product-title"><a href="product.html">Bose - SoundSport
-                                                                        wireless headphones</a></h3><!-- End .product-title -->
-                                                                <div class="product-price">
-                                                                    <span class="new-price">$179.99</span>
-                                                                    <span class="old-price">Was $199.00</span>
-                                                                </div><!-- End .product-price -->
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 100%;"></div>
-                                                                        <!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                                </div><!-- End .rating-container -->
-
-                                                                <div class="product-nav product-nav-dots">
-                                                                    <a href="#" class="active" style="background: #69b4ff;"><span
-                                                                            class="sr-only">Color
-                                                                            name</span></a>
-                                                                    <a href="#" style="background: #ff887f;"><span
-                                                                            class="sr-only">Color name</span></a>
-                                                                    <a href="#" style="background: #333333;"><span
-                                                                            class="sr-only">Color name</span></a>
-                                                                </div><!-- End .product-nav -->
-                                                            </div><!-- End .product-body -->
-                                                        </div><!-- End .product -->
-
-                                                        <div class="product text-center">
-                                                            <figure class="product-media">
-                                                                <span class="product-label label-top">Top</span>
-                                                                <a href="product.html">
-                                                                    <img src="assets/images/demos/demo-14/products/product-5.jpg"
-                                                                        alt="Product image" class="product-image">
-                                                                </a>
-
-                                                                <div class="product-action-vertical">
-                                                                    <a href="#" class="btn-product-icon btn-wishlist"
-                                                                        title="Add to wishlist"><span>add to wishlist</span></a>
-                                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                                                        title="Quick view"><span>Quick view</span></a>
-                                                                    <a href="#" class="btn-product-icon btn-compare"
-                                                                        title="Compare"><span>Compare</span></a>
-                                                                </div><!-- End .product-action-vertical -->
-
-                                                                <div class="product-action">
-                                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add
-                                                                            to cart</span></a>
-                                                                </div><!-- End .product-action -->
-                                                            </figure><!-- End .product-media -->
-
-                                                            <div class="product-body">
-                                                                <div class="product-cat">
-                                                                    <a href="#">Electronics</a>
-                                                                </div><!-- End .product-cat -->
-                                                                <h3 class="product-title"><a href="product.html">Sony - Class LED
-                                                                        2160p Smart <br>4K Ultra HD</a></h3><!-- End .product-title -->
-                                                                <div class="product-price">
-                                                                    $1,699.99
-                                                                </div><!-- End .product-price -->
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 80%;"></div>
-                                                                        <!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                    <span class="ratings-text">( 10 Reviews )</span>
-                                                                </div><!-- End .rating-container -->
-                                                            </div><!-- End .product-body -->
-                                                        </div><!-- End .product -->
-
-                                                        <div class="product text-center">
-                                                            <figure class="product-media">
-                                                                <span class="product-label label-top">Top</span>
-                                                                <a href="product.html">
-                                                                    <img src="assets/images/demos/demo-14/products/product-6.jpg"
-                                                                        alt="Product image" class="product-image">
-                                                                </a>
-
-                                                                <div class="product-action-vertical">
-                                                                    <a href="#" class="btn-product-icon btn-wishlist"
-                                                                        title="Add to wishlist"><span>add to wishlist</span></a>
-                                                                    <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                                                                        title="Quick view"><span>Quick view</span></a>
-                                                                    <a href="#" class="btn-product-icon btn-compare"
-                                                                        title="Compare"><span>Compare</span></a>
-                                                                </div><!-- End .product-action-vertical -->
-
-                                                                <div class="product-action">
-                                                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add
-                                                                            to cart</span></a>
-                                                                </div><!-- End .product-action -->
-                                                            </figure><!-- End .product-media -->
-
-                                                            <div class="product-body">
-                                                                <div class="product-cat">
-                                                                    <a href="#">Laptops</a>
-                                                                </div><!-- End .product-cat -->
-                                                                <h3 class="product-title"><a href="product.html">MacBook Pro 13"
-                                                                        Display, i5</a></h3><!-- End .product-title -->
-                                                                <div class="product-price">
-                                                                    $1,199.99
-                                                                </div><!-- End .product-price -->
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 100%;"></div>
-                                                                        <!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                    <span class="ratings-text">( 4 Reviews )</span>
-                                                                </div><!-- End .rating-container -->
-                                                            </div><!-- End .product-body -->
-                                                        </div><!-- End .product -->
-                                                    </div><!-- End .owl-carousel -->
+                                                    @endauth
+                                                        </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
                                                 <div class="tab-pane p-0 fade" id="trending-scarf-tab" role="tabpanel"
                                                     aria-labelledby="trending-scarf-link">
@@ -2161,6 +1941,7 @@
                                                             }
                                                         }
                                                     }'>
+                                                    @auth
                                                     @foreach ($scarfProducts as $scarf)
                                                     <div class="product text-center">
                                                         <figure class="product-media">
@@ -2207,6 +1988,7 @@
                                                     </div><!-- End .product -->
        
                                                     @endforeach
+                                                    @endauth
                                                     </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
                                                 <div class="tab-pane p-0 fade" id="trending-Handmade-tab" role="tabpanel"
@@ -2240,6 +2022,7 @@
                                                         }
                                                     }
                                                 }'>
+                                                @auth
                                                 @foreach ($handmadeProducts as $handmade)
                                                 <div class="product text-center">
                                                     <figure class="product-media">
@@ -2286,6 +2069,7 @@
                                                 </div><!-- End .product -->
    
                                                 @endforeach
+                                                @endauth
                                                 </div><!-- End .owl-carousel -->
                                             </div><!-- .End .tab-pane -->
                                         
