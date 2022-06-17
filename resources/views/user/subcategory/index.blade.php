@@ -1183,7 +1183,7 @@
                                             <span>Out of stock</span>
                                         </div><!-- End .product-label -->
                                     @endif
-                                    <a href="product.html">
+                                    <a href="{{ route('user.product.view',$product->id) }}">
                                         @foreach ($product->images as $image)
                                             @if ($image->primary == 1)
                                                 <img style="width: 50%; margin-left: auto; margin-right: auto"
@@ -1221,7 +1221,7 @@
                                             @endforeach
                                         </a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product.html">{{ $product->name }}</a></h3>
+                                    <h3 class="product-title"><a href="{{ route('user.product.view',$product->id) }}">{{ $product->name }}</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         <span class="new-price">{{ round($product->price, 2) }}$</span>

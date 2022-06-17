@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
 
     {
+
         $categories = Category::all();
         $subcategories = Subcategory::with('category')->get();
         $brandsImages = Brand::select('image')->get();
@@ -49,8 +50,51 @@ class HomeController extends Controller
         foreach($cartProductsQuantity as $cartProductQuantity){
             $totalQuantity += $cartProductQuantity->quantity;
         }
-        
-        // share all variables to user.subcategory.index view
-        return view('layouts.user.main', compact('categories','subcategories', 'brandsImages', 'cartProductsWithImage', 'productImages','totalPrice', 'totalQuantity'));
+        $allProductsWithImages= DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->whereIn('subcategory_id',[19,18,17,16,15,14])->orderBy('products.id','asc')->get();
+            
+            $womenProducts=DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->where('subcategory_id',14)->get();
+            $menProducts=DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->where('subcategory_id',15)->get();
+            $sunglassesProducts=DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->where('subcategory_id',16)->get();
+            $childernProducts=DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->where('subcategory_id',17)->get();
+            $scarfProducts=DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->where('subcategory_id',18)->get();
+            $handmadeProducts=DB::table('products')
+            ->join('images', 'products.id', '=', 'images.product_id')
+            ->join('subcategories', 'products.subcategory_id', '=', 'subcategories.id')
+            ->select('products.id','products.name','products.price','products.quantity','products.brand_id','images.image','subcategories.name as subcategory_name')
+            ->where('images.primary', 1)
+            ->where('subcategory_id',19)->get();
+    
+            // dd($allProductsWithImages);
+        return view('layouts.user.main', compact('categories','subcategories', 'brandsImages', 'cartProductsWithImage', 'productImages','totalPrice', 'totalQuantity','allProductsWithImages','womenProducts','menProducts','sunglassesProducts','childernProducts','scarfProducts','handmadeProducts'));
     }
 }

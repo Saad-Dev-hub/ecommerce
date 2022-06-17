@@ -303,7 +303,7 @@
 
                                     <div id="product-zoom-gallery" class="product-image-gallery">
                                         {{-- Remove Secondary Images --}}
-                                        {{-- @foreach($images as $image)
+                                        @foreach($images as $image)
                                         @if( $image->primary == 1)
                                         <a class="product-gallery-item active" href="#" data-image="{{ asset($image->image) }}" data-zoom-image="{{ asset($image->image) }}">
                                             <img src="{{ asset($image->image) }}" alt="Main Image">
@@ -313,7 +313,7 @@
                                             <img src=" {{ asset($image->image) }}" alt="Other Image">
                                         </a>
                                         @endif
-                                        @endforeach --}}
+                                        @endforeach
                                     </div><!-- End .product-image-gallery -->
                                 </div><!-- End .row -->
                             </div><!-- End .product-gallery -->

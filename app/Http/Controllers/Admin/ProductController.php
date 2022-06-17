@@ -101,9 +101,8 @@ class ProductController extends Controller
                     'primary' => 0,
                     'product_id' => $product->id
                 ]);
-                // resizing image to 300x300 and saving it in the product secondary folder
                 $secondaryImage = new Image;
-                $secondaryImage->make($image)->resize(500,500)->save(public_path('images/products/secondary/' . $secondaryImageName));
+                $secondaryImage->make($image)->save(public_path('images/products/secondary/' . $secondaryImageName));
             }
         }
 
