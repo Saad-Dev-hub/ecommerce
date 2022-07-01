@@ -1221,23 +1221,23 @@
                                                     <figure class="slide-image">
                                                         <picture>
                                                             <source media="(max-width: 480px)"
-                                                                srcset="{{ asset('assets/images/The-Kids-Fashion-Trends-of-2019-That-You-Need-to-Know-1068x488.jpg') }}">
-                                                            <img src="{{ asset('assets/images/The-Kids-Fashion-Trends-of-2019-That-You-Need-to-Know-1068x488.jpg') }}"
+                                                                srcset="{{ asset('images/bg.jfif') }}">
+                                                            <img src="{{ asset('images/bg.jfif') }}"
                                                                 alt="Image Desc">
                                                         </picture>
                                                     </figure><!-- End .slide-image -->
 
                                                     <div class="intro-content">
-                                                        <h5 class="text-black mt-4" style="opacity: .5">New Arrivals</h5><!-- End .h3 intro-subtitle -->
-                                                        <h1 class="intro-title text-black" style="opacity: .7">
-                                                            The New Way <br>To <br> Buy Childern Clothes
+                                                        <h5 class="text-white mt-4" style="opacity: .9">New Arrivals</h5><!-- End .h3 intro-subtitle -->
+                                                        <h1 class="intro-title text-white" style="opacity: .9">
+                                                            The New Way <br>To <br> Buy  Clothes
                                                         </h1><!-- End .intro-title -->
 
-                                                        <div class="intro-text text-black">
+                                                        <div class="intro-text text-white font-bold">
                                                             Childern Collections 2022
                                                         </div><!-- End .intro-text -->
 
-                                                        <a href="{{ route('user.subcategories.show', 17) }}" class="btn btn-primary text-black">
+                                                        <a href="{{ route('user.subcategories.show', 17) }}" class="btn btn-primary text-white">
                                                             <span>Discover Now</span>
                                                             <i class="icon-long-arrow-right"></i>
                                                         </a>
@@ -1548,7 +1548,7 @@
 
                                                                 <div class="product-action">
                                                                     <a href="{{ route('user.product.view',$product1->id) }}" class="btn-product btn-quickview"
-                                                                        title="Quick view"><span>quick view</span></a>                            
+                                                                        title="Quick view"><span>quick view</span></a>
                                                                         @if(Auth :: check())
                                                                         <form action="{{ route('user.carts.store') }}" method="POST">
                                                                             @csrf
@@ -1559,7 +1559,7 @@
                                                                     @else
                                                                         <a href="{{ route('login') }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                                                     @endif
-                                                                    
+
                                                                     </div><!-- End .product-action -->
                                                             </figure><!-- End .product-media -->
 
@@ -1582,7 +1582,7 @@
                                                                 </div><!-- End .rating-container -->
                                                             </div><!-- End .product-body -->
                                                         </div>
-                                                    @endforeach  
+                                                    @endforeach
                                                     @endauth
                                                     </div><!-- End .owl-carousel -->
                                                 </div><!-- .End .tab-pane -->
@@ -1627,7 +1627,7 @@
                                                             </a>
                                                             <div class="product-action">
                                                                 <a href="{{ route('user.product.view',$women->id) }}" class="btn-product btn-quickview"
-                                                                    title="Quick view"><span>quick view</span></a>    
+                                                                    title="Quick view"><span>quick view</span></a>
                                                                     @if(Auth :: check())
                                                                         <form action="{{ route('user.carts.store') }}" method="POST">
                                                                             @csrf
@@ -1638,7 +1638,7 @@
                                                                     @else
                                                                         <a href="{{ route('login') }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                                                     @endif
-                                                                                            
+
                                                             </div><!-- End .product-action -->
                                                         </figure><!-- End .product-media -->
 
@@ -1666,7 +1666,7 @@
                                                                         class="sr-only">Color name</span></a>
                                                             </div><!-- End .product-nav -->
                                                         </div><!-- End .product-body -->
-                                                    </div>                  
+                                                    </div>
                                                     @endforeach
                                                     @endauth
                                                        </div><!-- End .owl-carousel -->
@@ -1713,7 +1713,7 @@
                                                             </a>
                                                             <div class="product-action">
                                                                 <a href="{{ route('user.product.view',$men->id) }}" class="btn-product btn-quickview"
-                                                                    title="Quick view"><span>quick view</span></a>    
+                                                                    title="Quick view"><span>quick view</span></a>
                                                                     @if(Auth :: check())
                                                                         <form action="{{ route('user.carts.store') }}" method="POST">
                                                                             @csrf
@@ -1724,7 +1724,7 @@
                                                                     @else
                                                                         <a href="{{ route('login') }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                                                     @endif
-                                                                        
+
                                                             </div><!-- End .product-action -->
                                                         </figure><!-- End .product-media -->
 
@@ -1745,7 +1745,7 @@
                                                             </div><!-- End .rating-container -->
                                                         </div><!-- End .product-body -->
                                                     </div><!-- End .product -->
-       
+
                                                     @endforeach
                                                     @endauth
                                                        </div><!-- End .owl-carousel -->
@@ -1790,10 +1790,10 @@
                                                                 <img src="{{ $sunglass->image }}"
                                                                     alt="Product image" class="product-image">
                                                             </a>
-                                                        
+
                                                             <div class="product-action">
                                                                 <a href="{{ route('user.product.view',$sunglass->id) }}" class="btn-product btn-quickview"
-                                                                    title="Quick view"><span>quick view</span></a>    
+                                                                    title="Quick view"><span>quick view</span></a>
                                                                     @if(Auth :: check())
                                                                         <form action="{{ route('user.carts.store') }}" method="POST">
                                                                             @csrf
@@ -1824,7 +1824,7 @@
                                                             </div><!-- End .rating-container -->
                                                         </div><!-- End .product-body -->
                                                     </div><!-- End .product -->
-             
+
                                                     @endforeach
                                                     @endauth
                                                     </div><!-- End .owl-carousel -->
@@ -1874,7 +1874,7 @@
 
                                                             <div class="product-action">
                                                                 <a href="{{ route('user.product.view',$child->id) }}" class="btn-product btn-quickview"
-                                                                    title="Quick view"><span>quick view</span></a>    
+                                                                    title="Quick view"><span>quick view</span></a>
                                                                     @if(Auth :: check())
                                                                         <form action="{{ route('user.carts.store') }}" method="POST">
                                                                             @csrf
@@ -1905,7 +1905,7 @@
                                                             </div><!-- End .rating-container -->
                                                         </div><!-- End .product-body -->
                                                     </div><!-- End .product -->
-       
+
                                                     @endforeach
                                                     @endauth
                                                         </div><!-- End .owl-carousel -->
@@ -1955,7 +1955,7 @@
 
                                                             <div class="product-action">
                                                                 <a href="{{ route('user.product.view',$scarf->id) }}" class="btn-product btn-quickview"
-                                                                    title="Quick view"><span>quick view</span></a>    
+                                                                    title="Quick view"><span>quick view</span></a>
                                                                     @if(Auth :: check())
                                                                         <form action="{{ route('user.carts.store') }}" method="POST">
                                                                             @csrf
@@ -1986,7 +1986,7 @@
                                                             </div><!-- End .rating-container -->
                                                         </div><!-- End .product-body -->
                                                     </div><!-- End .product -->
-       
+
                                                     @endforeach
                                                     @endauth
                                                     </div><!-- End .owl-carousel -->
@@ -2036,7 +2036,7 @@
 
                                                         <div class="product-action">
                                                             <a href="{{ route('user.product.view',$handmade->id) }}" class="btn-product btn-quickview"
-                                                                title="Quick view"><span>quick view</span></a>    
+                                                                title="Quick view"><span>quick view</span></a>
                                                                 @if(Auth :: check())
                                                                     <form action="{{ route('user.carts.store') }}" method="POST">
                                                                         @csrf
@@ -2067,12 +2067,12 @@
                                                         </div><!-- End .rating-container -->
                                                     </div><!-- End .product-body -->
                                                 </div><!-- End .product -->
-   
+
                                                 @endforeach
                                                 @endauth
                                                 </div><!-- End .owl-carousel -->
                                             </div><!-- .End .tab-pane -->
-                                        
+
                                             </div><!-- End .tab-content -->
                                         </div><!-- End .bg-lighter -->
 

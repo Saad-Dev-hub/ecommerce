@@ -423,10 +423,10 @@
 	                					<label>Email address *</label>
 	        							<input type="email" class="form-control" required>
 
-	        							<div class="custom-control custom-checkbox">
+	        							{{-- <div class="custom-control custom-checkbox">
 											<input type="checkbox" class="custom-control-input" id="checkout-create-acc">
 											<label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
-										</div><!-- End .custom-checkbox -->
+										</div><!-- End .custom-checkbox --> --}}
 
 										<div class="custom-control custom-checkbox">
 											<input type="checkbox" class="custom-control-input" id="checkout-diff-address">

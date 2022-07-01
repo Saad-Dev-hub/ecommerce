@@ -447,7 +447,7 @@
                                                 </div><!-- End .col-md-4 -->
                                             </div><!-- End .row -->
                                         </div><!-- End .megamenu -->
-                                    </li>
+                                    {{-- </li>
                                     <li class="megamenu-container">
                                         <a class="sf-with-ul" href="#"><i class="icon-couch"></i>Furniture</a>
 
@@ -703,7 +703,19 @@
                                     <li><a href="#"><i class="icon-tv"></i>TV & Audio</a></li>
                                     <li><a href="#"><i class="icon-shopping-bag"></i>Backpack & Bag</a></li>
                                     <li><a href="#"><i class="icon-music"></i>Musical Instruments</a></li>
-                                    <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li>
+                                    <li><a href="#"><i class="icon-gift"></i>Gift Ideas</a></li> --}}
+                                    
+                                    @foreach ($categories as $category )
+                                    @foreach ($category->subcategories as $subcat)
+                                    <li class="megamenu-container">
+                                        @if($subcat->name=='Women' || $subcat->name=="Men" || $subcat->name=="Sunglasses" || $subcat->name=="Children" || $subcat->name=="Scarf" || $subcat->name=="Handmade")
+                                        <a href="{{ route('user.subcategories.show', $subcat->id) }}"> <i class="icon-tshirt"></i>{{ $subcat->name }}</a>
+                                        @endif
+                                    </li>
+
+                                    @endforeach
+
+                                    @endforeach
                                 </ul><!-- End .menu-vertical -->
                             </nav><!-- End .side-nav -->
                         </div><!-- End .dropdown-menu -->
