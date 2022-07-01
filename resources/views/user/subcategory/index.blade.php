@@ -166,7 +166,7 @@
 
                         <div class="col-lg-4 col-xxl-5col d-flex justify-content-end align-items-center">
                             <div class="header-dropdown-link">
-                                <div class="dropdown compare-dropdown">
+                                {{-- <div class="dropdown compare-dropdown">
                                     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false" data-display="static"
                                         title="Compare Products" aria-label="Compare Products">
@@ -196,13 +196,13 @@
                                                     class="icon-long-arrow-right"></i></a>
                                         </div>
                                     </div><!-- End .dropdown-menu -->
-                                </div><!-- End .compare-dropdown -->
+                                </div><!-- End .compare-dropdown --> --}}
 
-                                <a href="wishlist.html" class="wishlist-link">
+                                {{-- <a href="wishlist.html" class="wishlist-link">
                                     <i class="icon-heart-o"></i>
                                     <span class="wishlist-count">3</span>
                                     <span class="wishlist-txt">Wishlist</span>
-                                </a>
+                                </a> --}}
 
                                 {{-- <div class="dropdown cart-dropdown">
                                     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
